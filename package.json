@@ -1,6 +1,6 @@
 {
-  "name": "csv-table-viewer",
-  "displayName": "csv-table-viewer",
+  "name": "csv-table-viewer-lite",
+  "displayName": "CSV Table Viewer Lite",
   "description": "Display CSV files as interactive tables inside VS Code.",
   "publisher": "psynowiec",
   "author": {
