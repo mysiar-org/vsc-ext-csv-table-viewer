@@ -1,6 +1,7 @@
 {
+  "version": "0.0.4",
   "name": "csv-table-viewer-lite",
-  "displayName": "CSV Table Viewer Lite",
+  "displayName": "CSV & Parquet Table Viewer Lite",
   "description": "Display CSV files as interactive tables inside VS Code.",
   "publisher": "psynowiec",
   "author": {
@@ -9,29 +10,50 @@
   },
   "repository": "https://github.com/mysiar-org/vsc-ext-csv-table-viewer",
   "icon": "media/icon.png",
-  "version": "0.0.3",
   "engines": {
     "vscode": "^1.40.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:csv-table-viewer.openCsvFromExplorer"
-  ],
   "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:csv-table-viewer.openCsvFromExplorer",
+    "onCommand:csv-table-viewer.openParquetFromExplorer"
+  ],
   "contributes": {
     "commands": [
       {
         "command": "csv-table-viewer.openCsvFromExplorer",
-        "title": "Open CSV in Table Viewer"
+        "title": "Open CSV in Table Viewer",
+        "category": "hidden"
+      },
+      {
+        "command": "csv-table-viewer.openParquetFromExplorer",
+        "title": "Open Parquet in Table Viewer",
+        "category": "hidden"
       }
     ],
     "menus": {
+      "commandPalette": [
+        {
+          "command": "csv-table-viewer.openCsvFromExplorer",
+          "when": "false"
+        },
+        {
+          "command": "csv-table-viewer.openParquetFromExplorer",
+          "when": "false"
+        }
+      ],
       "explorer/context": [
         {
           "command": "csv-table-viewer.openCsvFromExplorer",
-          "when": "resourceExtname == .csv",
+          "when": "resourceExtname =~ /\\.csv/i",
+          "group": "navigation"
+        },
+        {
+          "command": "csv-table-viewer.openParquetFromExplorer",
+          "when": "resourceExtname =~ /\\.parquet/i",
           "group": "navigation"
         }
       ]
@@ -46,13 +68,16 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.40.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
-    "typescript-eslint": "^8.56.1",
+    "@types/vscode": "^1.40.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
     "eslint": "^9.39.3",
     "typescript": "^5.9.3",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "typescript-eslint": "^8.56.1"
+  },
+  "dependencies": {
+    "parquetjs-lite": "^0.8.7"
   }
 }

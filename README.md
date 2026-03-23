@@ -1,76 +1,69 @@
-# CSV Table Viewer Lite
-A lightweight Visual Studio Code extension for displaying CSV files as clean, readable HTML tables.
+# CSV & Parquet Table Viewer Lite
+A lightweight Visual Studio Code extension for viewing **CSV** and **Parquet** files as clean, interactive HTML tables.
 
 ---
 
 ## 📌 Overview
 
-**CSV Table Viewer Lite** makes it easy to inspect CSV files directly inside VS Code.  
-Instead of reading raw comma‑separated text, you can instantly open any `.csv` file as a formatted table in a side panel.
+**CSV & Parquet Table Viewer Lite** lets you inspect tabular data directly inside VS Code — no external tools, no terminals, no plugins.  
+Right‑click a file in the Explorer and instantly open it as a formatted, sortable table.
 
-Perfect for developers, testers, analysts, and anyone working with tabular data.
+Perfect for developers, analysts, testers, data engineers, and anyone who works with structured data.
 
 ---
 
 ## ✨ Features
 
-### ✔ Open from Explorer
-Right‑click any `.csv` file in the Explorer and choose:
+### ✔ Open directly from Explorer
+Right‑click a file and choose:
 
-**Open CSV in Table Viewer**
+- **Open CSV in Table Viewer**
+- **Open Parquet in Table Viewer**
 
-The file opens immediately in a side panel — no dialogs, no file picker.
+The viewer opens immediately in a side panel.
 
-### ✔ Clean HTML table rendering
-Your CSV is displayed as a simple, readable table:
+### ✔ Clean, readable HTML table
+Your data is rendered as a simple, elegant table:
 
-- Header row styled automatically  
-- Borders and spacing for clarity  
-- No external dependencies  
+- Automatic header styling  
+- Clear borders and spacing  
+- No external libraries  
 - Works fully offline  
 
 ### ✔ Column sorting
-Click any column header to sort the table:
+Click any column header to sort:
 
 - Ascending / descending toggle  
-- Automatic numeric vs. text sorting  
-- Visual arrow indicator (▲ ▼)  
+- Numeric vs. text sorting handled automatically  
+- Visual arrow indicators (▲ ▼)
 
-Sorting works on any column, even after hiding/unhiding.
+### ✔ Hide & unhide columns
+Right‑click a column header to hide it.  
+Hidden columns appear as buttons above the table — click to unhide.
 
-### ✔ Hide and unhide columns
-Right‑click a column header to open a small context menu:
+Great for focusing on the fields that matter.
 
-- **Hide column** removes it from view  
-- Hidden columns appear in a toolbar above the table  
-- Click a button to **unhide** any column  
-
-Great for focusing on the data that matters.
+### ✔ Parquet support
+Open `.parquet` files directly from the Explorer.  
+The extension reads the schema and displays the rows just like CSV.
 
 ### ✔ Lightweight and fast
-The extension uses a minimal CSV → HTML converter with no external libraries.
-
-### ✔ Works with any CSV
-Supports:
-
-- Standard comma‑separated files  
-- Files with or without headers  
-- Large files (limited only by VS Code memory)
+- Minimal CSV and Parquet readers  
+- No heavy dependencies  
+- Designed for quick inspection, not full data processing
 
 ---
 
 ## 📦 Installation
 
-### **From the VS Code Marketplace**
+### From the VS Code Marketplace
 Search for:
 
-**CSV Table Viewer Lite**
+**CSV & Parquet Table Viewer Lite**
 
 and click **Install**.
 
-### **From a `.vsix` file**
-If you prefer manual installation:
-
+### From a `.vsix` file
 1. Open the Command Palette  
 2. Run **Extensions: Install from VSIX…**  
 3. Select the `.vsix` file  
@@ -79,18 +72,24 @@ If you prefer manual installation:
 
 ## 🚀 Usage
 
-### **From Explorer**
-1. Right‑click a `.csv` file  
-2. Select **Open CSV in Table Viewer**
+### From Explorer
+1. Right‑click a `.csv` or `.parquet` file  
+2. Choose the appropriate **Open … in Table Viewer** command  
+
+The table opens in a new editor panel.
 
 ---
 
 ## 🛠 Notes
-- Sorting and hide/unhide work entirely inside the webview  
-- Your CSV file is never modified  
-- The viewer is read‑only by design  
+
+- The viewer is **read‑only** — your files are never modified  
+- Sorting and hide/unhide are handled entirely inside the webview  
+- Large files work as long as they fit in VS Code’s memory  
+- The extension does **not** send data anywhere; everything stays local  
 
 ---
 
 ## ❤️ Feedback
-If you have ideas for improvements (filters, resizing, sticky headers), feel free to suggest them!
+
+Have ideas for improvements — filters, resizing, sticky headers, pagination?  
+Feel free to share your thoughts and help shape the next version.
