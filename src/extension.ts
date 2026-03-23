@@ -73,40 +73,57 @@ function openCsvAsTable(
   ${html}
 
   <script>
-    document.querySelectorAll("th").forEach((th, columnIndex) => {
-      th.addEventListener("click", () => sortTable(columnIndex));
+  document.querySelectorAll("th").forEach((th, columnIndex) => {
+    th.addEventListener("click", () => sortTable(columnIndex));
+  });
+
+  function sortTable(columnIndex) {
+    const table = document.querySelector("table");
+    const rows = Array.from(table.querySelectorAll("tr")).slice(1);
+
+    const isNumeric = rows.every(row => {
+      const value = row.children[columnIndex].innerText.trim();
+      return value !== "" && !isNaN(value);
     });
 
-    function sortTable(columnIndex) {
-      const table = document.querySelector("table");
-      const rows = Array.from(table.querySelectorAll("tr")).slice(1);
+    const sorted = rows.sort((a, b) => {
+      const A = a.children[columnIndex].innerText.trim();
+      const B = b.children[columnIndex].innerText.trim();
 
-      const isNumeric = rows.every(row => {
-        const value = row.children[columnIndex].innerText.trim();
-        return value !== "" && !isNaN(value);
-      });
-
-      const sorted = rows.sort((a, b) => {
-        const A = a.children[columnIndex].innerText.trim();
-        const B = b.children[columnIndex].innerText.trim();
-
-        if (isNumeric) {
-          return Number(A) - Number(B);
-        }
-        return A.localeCompare(B);
-      });
-
-      if (table.dataset.sortedColumn == columnIndex && table.dataset.order === "asc") {
-        sorted.reverse();
-        table.dataset.order = "desc";
-      } else {
-        table.dataset.order = "asc";
+      if (isNumeric) {
+        return Number(A) - Number(B);
       }
-      table.dataset.sortedColumn = columnIndex;
+      return A.localeCompare(B);
+    });
 
-      sorted.forEach(row => table.appendChild(row));
+    // Determine direction
+    let direction = "asc";
+    if (table.dataset.sortedColumn == columnIndex && table.dataset.order === "asc") {
+      sorted.reverse();
+      direction = "desc";
     }
-  </script>
+
+    table.dataset.sortedColumn = columnIndex;
+    table.dataset.order = direction;
+
+    // Reattach rows
+    sorted.forEach(row => table.appendChild(row));
+
+    // Clear all arrows
+    document.querySelectorAll("th").forEach(th => {
+      th.innerText = th.innerText.replace(/ ▲| ▼/g, "");
+    });
+
+    // Add arrow to the active column
+    const activeTh = document.querySelectorAll("th")[columnIndex];
+    if (direction === "asc") {
+      activeTh.innerText += " ▲";
+    } else {
+      activeTh.innerText += " ▼";
+    }
+  }
+</script>
+
 </body>
 </html>`;
 }
