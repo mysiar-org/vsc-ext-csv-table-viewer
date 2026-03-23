@@ -23,7 +23,7 @@ function openCsvAsTable(csvContent: string, fileName: string) {
   const panel = vscode.window.createWebviewPanel(
     "csvTableViewer",
     `CSV Table: ${fileName}`,
-    vscode.ViewColumn.Beside,
+    vscode.ViewColumn.Active,
     { enableScripts: true }
   );
 

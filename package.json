@@ -9,7 +9,7 @@
   },
   "repository": "https://github.com/mysiar-org/vsc-ext-csv-table-viewer",
   "icon": "media/icon.png",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.40.0"
   },
