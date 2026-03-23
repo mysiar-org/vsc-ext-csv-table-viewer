@@ -1,0 +1,58 @@
+{
+  "name": "csv-table-viewer",
+  "displayName": "csv-table-viewer",
+  "description": "Display CSV files as interactive tables inside VS Code.",
+  "publisher": "psynowiec",
+  "author": {
+    "name": "Piotr Synowiec",
+    "email": "psynowiec@gmail.com"
+  },
+  "repository": "https://github.com/mysiar-org/vsc-ext--csv-table-viewer",
+  "icon": "media/icon.png",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.40.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:csv-table-viewer.openCsvFromExplorer"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "csv-table-viewer.openCsvFromExplorer",
+        "title": "Open CSV in Table Viewer"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "csv-table-viewer.openCsvFromExplorer",
+          "when": "resourceExtname == .csv",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.40.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.56.1",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
