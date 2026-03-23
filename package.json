@@ -7,7 +7,7 @@
     "name": "Piotr Synowiec",
     "email": "psynowiec@gmail.com"
   },
-  "repository": "https://github.com/mysiar-org/vsc-ext--csv-table-viewer",
+  "repository": "https://github.com/mysiar-org/vsc-ext-csv-table-viewer",
   "icon": "media/icon.png",
   "version": "0.0.1",
   "engines": {
