@@ -1,8 +1,8 @@
 import * as vscode from "vscode";
 import { convertCsvToHtml } from "./csv/parser";
 import { buildWebviewHtml } from "./webview/html";
-import { loadParquet } from "./parquet/reader";
-import { parquetToHtml } from "./parquet/toHtml";
+import { loadParquetDuck } from "./parquet/readerDuck";
+
 
 export function activate(context: vscode.ExtensionContext) {
   console.log("CSV Table Viewer Lite is now active.");
@@ -27,7 +27,7 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   //
-  // Parquet command
+  // Parquet  command
   //
   context.subscriptions.push(
     vscode.commands.registerCommand(
@@ -39,9 +39,8 @@ export function activate(context: vscode.ExtensionContext) {
         }
 
         try {
-          const rows = await loadParquet(uri);
-          const tableHtml = parquetToHtml(rows);
-
+          const csvContent = await loadParquetDuck(uri);
+          const tableHtml = convertCsvToHtml(csvContent);
           const panel = vscode.window.createWebviewPanel(
             "csvTableViewer",
             `Parquet Table: ${uri.fsPath}`,
@@ -56,6 +55,7 @@ export function activate(context: vscode.ExtensionContext) {
       }
     )
   );
+
 }
 
 //
