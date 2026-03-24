@@ -1,5 +1,5 @@
 {
-  "version": "0.0.8",
+  "version": "0.0.9",
   "preview": true,
   "name": "csv-table-viewer-lite",
   "displayName": "CSV & Parquet Table Viewer Lite",
@@ -20,7 +20,7 @@
   "main": "./out/extension.js",
   "activationEvents": [
     "onCommand:csv-table-viewer.openCsvFromExplorer",
-    "onCommand:csv-table-viewer.openParquetFromExplorer"
+    "onCommand:csv-table-viewer.openParqueFromExplorer"
   ],
   "contributes": {
     "commands": [
@@ -79,6 +79,7 @@
     "typescript-eslint": "^8.56.1"
   },
   "dependencies": {
+    "duckdb": "^1.4.4",
     "parquetjs-lite": "^0.8.7"
   }
 }
