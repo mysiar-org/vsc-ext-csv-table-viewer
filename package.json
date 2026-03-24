@@ -1,10 +1,13 @@
 {
-  "version": "0.0.9",
+  "version": "0.0.10",
   "preview": true,
   "name": "csv-table-viewer-lite",
   "displayName": "CSV & Parquet Table Viewer Lite",
   "description": "Display CSV files as interactive tables inside VS Code.",
   "publisher": "psynowiec",
+  "extensionKind": [
+    "workspace"
+  ],
   "author": {
     "name": "Piotr Synowiec",
     "email": "psynowiec@gmail.com"
