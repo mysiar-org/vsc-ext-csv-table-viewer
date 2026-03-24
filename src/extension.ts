@@ -39,8 +39,11 @@ export function activate(context: vscode.ExtensionContext) {
         }
 
         try {
-          const rows = await loadParquet(uri);
-          const tableHtml = parquetToHtml(rows);
+          // loadParquet now returns CSV text
+          const csvContent = await loadParquet(uri);
+
+          // reuse your existing CSV → HTML converter
+          const tableHtml = convertCsvToHtml(csvContent);
 
           const panel = vscode.window.createWebviewPanel(
             "csvTableViewer",

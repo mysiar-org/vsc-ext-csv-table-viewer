@@ -4,6 +4,22 @@ All notable changes to the "csv-table-viewer" extension will be documented in th
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.8] - 2026-03-24
+
+- parquet viewer fix
+
+## [0.0.7] - 2026-03-24
+
+- parquet viewer broken
+
+## [0.0.6] - 2026-03-24
+
+- parquet viewer broken
+
+## [0.0.5] - 2026-03-24
+
+- parquet viewer broken
+
 ## [0.0.4] - 2026-03-23
 
 - parquet viewer

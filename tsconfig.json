@@ -5,7 +5,8 @@
 		"outDir": "out",
 		"rootDir": "src",
 		"lib": [
-			"ES2022"
+			"es2020",
+			"dom"
 		],
 		"sourceMap": true,
 		"strict": true,
