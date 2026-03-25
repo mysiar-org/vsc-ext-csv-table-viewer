@@ -83,7 +83,6 @@
     "typescript-eslint": "^8.56.1"
   },
   "dependencies": {
-    "@duckdb/duckdb-wasm": "^1.33.1-dev20.0",
     "duckdb": "^1.4.4"
   }
 }
