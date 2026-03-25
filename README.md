@@ -1,4 +1,5 @@
 # CSV & Parquet Table Viewer Lite
+
 A lightweight Visual Studio Code extension for viewing **CSV** and **Parquet** files as clean, interactive HTML tables.
 
 ---
@@ -15,6 +16,7 @@ Perfect for developers, analysts, testers, data engineers, and anyone who works 
 ## ✨ Features
 
 ### ✔ Open directly from Explorer
+
 Right‑click a file and choose:
 
 - **Open CSV in Table Viewer**
@@ -23,6 +25,7 @@ Right‑click a file and choose:
 The viewer opens immediately in a side panel.
 
 ### ✔ Clean, readable HTML table
+
 Your data is rendered as a simple, elegant table:
 
 - Automatic header styling  
@@ -31,6 +34,7 @@ Your data is rendered as a simple, elegant table:
 - Works fully offline  
 
 ### ✔ Column sorting
+
 Click any column header to sort:
 
 - Ascending / descending toggle  
@@ -38,16 +42,19 @@ Click any column header to sort:
 - Visual arrow indicators (▲ ▼)
 
 ### ✔ Hide & unhide columns
+
 Right‑click a column header to hide it.  
 Hidden columns appear as buttons above the table — click to unhide.
 
 Great for focusing on the fields that matter.
 
 ### ✔ Parquet support
+
 Open `.parquet` files directly from the Explorer.  
 The extension reads the schema and displays the rows just like CSV.
 
 ### ✔ Lightweight and fast
+
 - Minimal CSV and Parquet readers  
 - No heavy dependencies  
 - Designed for quick inspection, not full data processing
@@ -57,6 +64,7 @@ The extension reads the schema and displays the rows just like CSV.
 ## 📦 Installation
 
 ### From the VS Code Marketplace
+
 Search for:
 
 **CSV & Parquet Table Viewer Lite**
@@ -64,6 +72,7 @@ Search for:
 and click **Install**.
 
 ### From a `.vsix` file
+
 1. Open the Command Palette  
 2. Run **Extensions: Install from VSIX…**  
 3. Select the `.vsix` file  
@@ -73,6 +82,7 @@ and click **Install**.
 ## 🚀 Usage
 
 ### From Explorer
+
 1. Right‑click a `.csv` or `.parquet` file  
 2. Choose the appropriate **Open … in Table Viewer** command  
 
@@ -93,3 +103,12 @@ The table opens in a new editor panel.
 
 Have ideas for improvements — filters, resizing, sticky headers, pagination?  
 Feel free to share your thoughts and help shape the next version.
+
+## Problems
+
+- RH8
+
+```log
+2026-03-24 18:00:36.277 [error] Activating extension psynowiec.csv-table-viewer-lite failed due to an error:
+2026-03-24 18:00:36.278 [error] Error: /lib64/libm.so.6: version `GLIBC_2.29' not found (.vscode-server/extensions/psynowiec.csv-table-viewer-lite-0.0.10 node_modules/duckdb/lib/binding/duckdb.node)
+```

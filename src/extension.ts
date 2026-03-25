@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { convertCsvToHtml } from "./csv/parser";
 import { buildWebviewHtml } from "./webview/html";
-import { loadParquetDuck } from "./parquet/readerDuck";
+import { loadParquetDuck } from "./parquet/reader";
 
 
 export function activate(context: vscode.ExtensionContext) {
