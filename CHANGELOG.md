@@ -4,6 +4,10 @@ All notable changes to the "csv-table-viewer" extension will be documented in th
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.11] - 2026-03-25
+
+- parquet reader display error if can't initialize (os problem, example RH8)
+
 ## [0.0.10] - 2026-03-24
 
 - extensionKind: workspace
