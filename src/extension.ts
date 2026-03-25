@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { convertCsvToHtml } from "./csv/parser";
 import { buildWebviewHtml } from "./webview/html";
-import { loadParquetDuck } from "./parquet/readerDuck";
+import { loadParquet } from "./parquet/reader";
 
 
 export function activate(context: vscode.ExtensionContext) {
@@ -39,7 +39,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
 
         try {
-          const csvContent = await loadParquetDuck(uri);
+          const csvContent = await loadParquet(uri);
           const tableHtml = convertCsvToHtml(csvContent);
           const panel = vscode.window.createWebviewPanel(
             "csvTableViewer",
