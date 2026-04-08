@@ -1,5 +1,5 @@
 {
-  "version": "0.0.11",
+  "version": "0.0.13",
   "preview": true,
   "name": "csv-table-viewer-lite",
   "displayName": "CSV & Parquet Table Viewer Lite",
@@ -22,19 +22,13 @@
   ],
   "main": "./out/extension.js",
   "activationEvents": [
-    "onCommand:csv-table-viewer.openCsvFromExplorer",
-    "onCommand:csv-table-viewer.openParqueFromExplorer"
+    "onCommand:csv-table-viewer.openCsvFromExplorer"
   ],
   "contributes": {
     "commands": [
       {
         "command": "csv-table-viewer.openCsvFromExplorer",
         "title": "Open CSV in Table Viewer",
-        "category": "hidden"
-      },
-      {
-        "command": "csv-table-viewer.openParquetFromExplorer",
-        "title": "Open Parquet in Table Viewer",
         "category": "hidden"
       }
     ],
@@ -43,21 +37,12 @@
         {
           "command": "csv-table-viewer.openCsvFromExplorer",
           "when": "false"
-        },
-        {
-          "command": "csv-table-viewer.openParquetFromExplorer",
-          "when": "false"
         }
       ],
       "explorer/context": [
         {
           "command": "csv-table-viewer.openCsvFromExplorer",
           "when": "resourceExtname =~ /\\.csv/i",
-          "group": "navigation"
-        },
-        {
-          "command": "csv-table-viewer.openParquetFromExplorer",
-          "when": "resourceExtname =~ /\\.parquet/i",
           "group": "navigation"
         }
       ]
