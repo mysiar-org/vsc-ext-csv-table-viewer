@@ -66,8 +66,5 @@
     "eslint": "^9.39.3",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.56.1"
-  },
-  "dependencies": {
-    "duckdb": "^1.4.4"
   }
 }
