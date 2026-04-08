@@ -8,6 +8,6 @@ compile:: out
 build:: out
 	vsce package
 
-publish:: rm
+publish:: out
 	vsce publish
 
