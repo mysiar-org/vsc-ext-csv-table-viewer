@@ -1,12 +1,12 @@
-# CSV & Parquet Table Viewer Lite
+# CSV Table Viewer Lite
 
-A lightweight Visual Studio Code extension for viewing **CSV** and **Parquet** files as clean, interactive HTML tables.
+A lightweight Visual Studio Code extension for viewing **CSV** files as clean, interactive HTML tables.
 
 ---
 
 ## 📌 Overview
 
-**CSV & Parquet Table Viewer Lite** lets you inspect tabular data directly inside VS Code — no external tools, no terminals, no plugins.  
+**CSV Table Viewer Lite** lets you inspect tabular data directly inside VS Code — no external tools, no terminals, no plugins.  
 Right‑click a file in the Explorer and instantly open it as a formatted, sortable table.
 
 Perfect for developers, analysts, testers, data engineers, and anyone who works with structured data.
@@ -20,7 +20,6 @@ Perfect for developers, analysts, testers, data engineers, and anyone who works 
 Right‑click a file and choose:
 
 - **Open CSV in Table Viewer**
-- **Open Parquet in Table Viewer**
 
 The viewer opens immediately in a side panel.
 
@@ -48,14 +47,9 @@ Hidden columns appear as buttons above the table — click to unhide.
 
 Great for focusing on the fields that matter.
 
-### ✔ Parquet support
-
-Open `.parquet` files directly from the Explorer.  
-The extension reads the schema and displays the rows just like CSV.
-
 ### ✔ Lightweight and fast
 
-- Minimal CSV and Parquet readers  
+- Minimal CSV reader  
 - No heavy dependencies  
 - Designed for quick inspection, not full data processing
 
@@ -67,7 +61,7 @@ The extension reads the schema and displays the rows just like CSV.
 
 Search for:
 
-**CSV & Parquet Table Viewer Lite**
+**CSV Table Viewer Lite**
 
 and click **Install**.
 
@@ -83,8 +77,8 @@ and click **Install**.
 
 ### From Explorer
 
-1. Right‑click a `.csv` or `.parquet` file  
-2. Choose the appropriate **Open … in Table Viewer** command  
+1. Right‑click a `.csv` file  
+2. Choose **Open CSV in Table Viewer**  
 
 The table opens in a new editor panel.
 
@@ -94,7 +88,7 @@ The table opens in a new editor panel.
 
 - The viewer is **read‑only** — your files are never modified  
 - Sorting and hide/unhide are handled entirely inside the webview  
-- Large files work as long as they fit in VS Code’s memory  
+- Large files work as long as they fit in VS Code's memory  
 - The extension does **not** send data anywhere; everything stays local  
 
 ---
@@ -103,12 +97,3 @@ The table opens in a new editor panel.
 
 Have ideas for improvements — filters, resizing, sticky headers, pagination?  
 Feel free to share your thoughts and help shape the next version.
-
-## Problems
-
-- RH8
-
-```log
-2026-03-24 18:00:36.277 [error] Activating extension psynowiec.csv-table-viewer-lite failed due to an error:
-2026-03-24 18:00:36.278 [error] Error: /lib64/libm.so.6: version `GLIBC_2.29' not found (.vscode-server/extensions/psynowiec.csv-table-viewer-lite-0.0.10 node_modules/duckdb/lib/binding/duckdb.node)
-```
