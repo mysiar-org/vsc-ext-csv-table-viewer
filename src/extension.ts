@@ -1,7 +1,6 @@
 import * as vscode from "vscode";
 import { convertCsvToHtml } from "./csv/parser";
 import { buildWebviewHtml } from "./webview/html";
-import { loadParquetDuck } from "./parquet/reader";
 
 
 export function activate(context: vscode.ExtensionContext) {
@@ -25,37 +24,6 @@ export function activate(context: vscode.ExtensionContext) {
       }
     )
   );
-
-  //
-  // Parquet  command
-  //
-  context.subscriptions.push(
-    vscode.commands.registerCommand(
-      "csv-table-viewer.openParquetFromExplorer",
-      async (uri: vscode.Uri) => {
-        if (!uri) {
-          vscode.window.showErrorMessage("No Parquet file selected.");
-          return;
-        }
-
-        try {
-          const csvContent = await loadParquetDuck(uri);
-          const tableHtml = convertCsvToHtml(csvContent);
-          const panel = vscode.window.createWebviewPanel(
-            "csvTableViewer",
-            `Parquet Table: ${uri.fsPath}`,
-            vscode.ViewColumn.Active,
-            { enableScripts: true }
-          );
-
-          panel.webview.html = buildWebviewHtml(tableHtml);
-        } catch (err: any) {
-          vscode.window.showErrorMessage("Failed to read Parquet file: " + err.message);
-        }
-      }
-    )
-  );
-
 }
 
 //
