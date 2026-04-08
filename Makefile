@@ -1,9 +1,13 @@
-compile::
+out::
+	@rm -rf out
+
+compile:: out
 	npm run compile
 
-build::
+
+build:: out
 	vsce package
 
-publish::
+publish:: rm
 	vsce publish
 
